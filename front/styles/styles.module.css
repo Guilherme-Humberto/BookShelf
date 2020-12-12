@@ -1,0 +1,14 @@
+.navBar {
+    position: fixed;
+    top: 0;
+    flex-wrap: wrap;
+    background: #bcd3c0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+}
+.openModalText:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
