@@ -2,6 +2,7 @@ import 'dotenv/config'
 import express from 'express'
 import { graphqlHTTP } from 'express-graphql'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import { schema } from './graphql/index'
 
 const app = express()
@@ -13,7 +14,7 @@ mongoose.connect(process.env.DB_CONNECTION, {
 mongoose.connection.once("open", () => {
     console.log("Conectado ao banco de dados")
 })
-
+app.use(cors())
 app.use(express.json())
 app.use("/", graphqlHTTP({
     schema,
